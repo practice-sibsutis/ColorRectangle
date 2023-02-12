@@ -1,0 +1,43 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:MyFirstAvaloniaApp.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:col="using:Avalonia.Media"
+        mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="300"
+		Height="300" Width="300"
+        x:Class="MyFirstAvaloniaApp.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="MyFirstAvaloniaApp">
+
+	<Design.DataContext>
+		<vm:MainWindowViewModel/>
+	</Design.DataContext>
+	
+	<Grid ShowGridLines="True" ColumnDefinitions="100, *" RowDefinitions="*">
+		<StackPanel Grid.Column="0">
+			
+			<Button Name="buttonTomato" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Content="Tomato"
+					Command="{Binding ButtonClick}" CommandParameter="{x:Static Colors.Tomato}"/>
+			<Button Name="buttonSteelBlue" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Content="SteelBlue"
+					Command="{Binding ButtonClick}" CommandParameter="{x:Static Colors.SteelBlue}"/>
+			<Button Name="buttonBlack" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Content="Black"
+					Command="{Binding ButtonClick}" CommandParameter="{x:Static Colors.Black}"/>
+			<Button Name="buttonGreen" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Content="Green"
+					Command="{Binding ButtonClick}" CommandParameter="{x:Static Colors.Green}"/>
+			<Button Name="buttonYellow" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Content="Yellow"
+					Command="{Binding ButtonClick}" CommandParameter="{x:Static Colors.Yellow}"/>
+			<Button Name="buttonPink" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Content="Pink"
+					Command="{Binding ButtonClick}" CommandParameter="{x:Static Colors.Pink}"/>
+			<Button Name="buttonCyan" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Content="Cyan"
+					Command="{Binding ButtonClick}" CommandParameter="{x:Static Colors.Cyan}"/>
+			<Button Name="buttonPurple" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Content="Purple"
+					Command="{Binding ButtonClick}" CommandParameter="{x:Static Colors.Purple}"/>
+			<Button Name="buttonMagenta" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Content="Magenta"
+					Command="{Binding ButtonClick}" CommandParameter="{x:Static Colors.Magenta}"/>
+			<Button Name="buttonOrchid" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Content="Orchid"
+					Command="{Binding ButtonClick}" CommandParameter="{x:Static Colors.Orchid}"/>
+		</StackPanel>
+		<Rectangle Height="{Binding #Grid.Height}" Fill="{Binding ColorBrush}" Grid.Column="1"/>
+	</Grid>
+</Window>
